@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Kumar Utkarsh - Computer Science &amp; Engineering Undergraduate at Lovely Professional University | Cloud Engineer &amp; UI/UX Designer specializing in Python, C, JavaScript, Figma, and IoT Systems.">
+  <meta name="keywords"
+    content="Kumar Utkarsh, Cloud Engineer, UI/UX Designer, AstraTune, Computer Science, Lovely Professional University, Python, C, JavaScript, Figma, Arduino, Portfolio">
+  <meta name="author" content="Kumar Utkarsh">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Kumar Utkarsh | Cloud Engineer &amp; UI/UX Designer">
+  <meta property="og:description"
+    content="Official Portfolio of Kumar Utkarsh - Computer Science &amp; Engineering Undergraduate at Lovely Professional University.">
+  <meta property="og:type" content="website">
+
+  <title>Kumar Utkarsh | Cloud Engineer &amp; UI/UX Designer</title>
+
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Immediate Theme Initialization to Prevent Flash of Dark/Light Theme -->
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- Background Canvas for Ambient Particles -->
+  <canvas id="particle-canvas" class="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Glowing Orbs -->
+  <div class="ambient-orb orb-1" aria-hidden="true"></div>
+  <div class="ambient-orb orb-2" aria-hidden="true"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header id="header" class="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="nav-brand" aria-label="Kumar Utkarsh Home">
+        <div class="nav-avatar-box">
+          <img src="assets/profile.jpg" alt="Kumar Utkarsh" class="nav-avatar-img" />
+        </div>
+        <div>
+          <span class="brand-bracket">&lt;</span>
+          <span class="brand-name">Utkarsh</span>
+          <span class="brand-dot">.dev</span>
+          <span class="brand-bracket">/&gt;</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#training" class="nav-link">Training</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Action -->
+      <div class="nav-actions">
+        <!-- Theme Toggle Switch (Sun / Moon) -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle light and dark mode" title="Toggle Light / Dark Mode">
+          <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="#contact" class="btn btn-outline btn-sm nav-cta-btn">Get In Touch</a>
+
+        <button id="mobile-toggle" class="mobile-toggle" aria-expanded="false" aria-controls="nav-menu"
+          aria-label="Toggle navigation menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ==================== HERO SECTION (EXECUTIVE PROFILE SHOWCASE) ==================== -->
+    <section id="home" class="section hero-section">
+      <div class="container">
+        <div class="hero-grid-layout">
+          <!-- Left Column: Bio, Roles, CTAs & Metrics -->
+          <div class="hero-content-col">
+            <!-- Status Badge -->
+            <div class="hero-badge-beacon reveal-on-scroll">
+              <span class="beacon-pulse"></span>
+              <span>Open to Cloud &amp; Software Engineering Roles</span>
+            </div>
+
+            <!-- Main Name Title -->
+            <h1 class="hero-title reveal-on-scroll">
+              Kumar <span class="gradient-text">Utkarsh</span>
+            </h1>
+
+            <!-- Dynamic Role Heading -->
+            <div class="hero-role-box reveal-on-scroll">
+              <h2 class="hero-role-heading">
+                Computer Science Engineer &bull; <span id="typing-text" class="typed-text-glow">Cloud Engineer</span>
+              </h2>
+            </div>
+
+            <!-- Professional Bio Pitch -->
+            <p class="hero-description reveal-on-scroll">
+              Computer Science &amp; Engineering undergraduate at Lovely Professional University maintaining an academic CGPA of 7.41. 
+              Passionate about architecting cloud solutions, building scalable backend services, and crafting intuitive, user-centered UI/UX systems in Figma.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="hero-actions reveal-on-scroll">
+              <a href="#projects" class="btn btn-primary">
+                <span>Explore Projects</span>
+                <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" width="17" height="17" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#certifications" class="btn btn-outline">
+                <span>View Certifications</span>
+                <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" width="17" height="17" aria-hidden="true">
+                  <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                  <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#contact" class="btn btn-glass">
+                <span>Contact Me</span>
+                <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor" width="17" height="17" aria-hidden="true">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Key Metrics Grid -->
+            <div class="hero-metrics-grid reveal-on-scroll">
+              <div class="hero-metric-tile glass-card">
+                <div class="metric-tile-val grad-text-blue">LPU</div>
+                <div class="metric-tile-lbl">B.Tech CSE (2025&ndash;Pres)</div>
+              </div>
+              <div class="hero-metric-tile glass-card">
+                <div class="metric-tile-val grad-text-emerald">7.41</div>
+                <div class="metric-tile-lbl">Academic CGPA</div>
+              </div>
+              <div class="hero-metric-tile glass-card">
+                <div class="metric-tile-val grad-text-purple">5 Verified</div>
+                <div class="metric-tile-lbl">Certifications</div>
+              </div>
+              <div class="hero-metric-tile glass-card">
+                <div class="metric-tile-val grad-text-amber">India</div>
+                <div class="metric-tile-lbl">Ranchi &bull; Phagwara</div>
+              </div>
+            </div>
+
+            <!-- Professional Links Strip -->
+            <div class="hero-social-strip reveal-on-scroll">
+              <span class="strip-label">Connect:</span>
+              <div class="strip-icons">
+                <a href="https://www.linkedin.com/in/iamutkarshnhn" target="_blank" rel="noopener noreferrer"
+                  class="strip-btn" aria-label="LinkedIn Profile" title="LinkedIn Profile">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.2a1.64 1.64 0 0 0-1.66 1.63c0 .91.74 1.65 1.66 1.65 1 0 1.67-.74 1.67-1.65A1.64 1.64 0 0 0 7.83 6.2Z" />
+                  </svg>
+                </a>
+                <a href="https://github.com/iamutkarshnhn" target="_blank" rel="noopener noreferrer" class="strip-btn"
+                  aria-label="GitHub Profile" title="GitHub Profile">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2Z" />
+                  </svg>
+                </a>
+                <a href="mailto:iamutkarshnhn@gmail.com" class="strip-btn" aria-label="Email Utkarsh" title="Email Utkarsh">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
+                </a>
+                <a href="tel:+919507504301" class="strip-btn" aria-label="Call Utkarsh" title="Call Utkarsh">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Circular Profile Picture Showcase -->
+          <div class="hero-visual-col reveal-on-scroll">
+            <div class="hero-circle-avatar-wrapper">
+              <!-- Floating Top Badge -->
+              <div class="hero-float-badge badge-top-right">
+                <span>🎓</span>
+                <span>B.Tech CSE &bull; LPU</span>
+              </div>
+
+              <!-- Circular Avatar Frame (Not Too Big) -->
+              <div class="hero-circle-avatar-frame">
+                <div class="hero-circle-avatar-inner">
+                  <img src="assets/profile.jpg" alt="Kumar Utkarsh - Profile Photo" class="hero-circle-avatar-img" />
+                </div>
+                <!-- Status Indicator Dot -->
+                <div class="avatar-status-dot" title="Online / Open to Opportunities"></div>
+              </div>
+
+              <!-- Floating Bottom Badge -->
+              <div class="hero-float-badge badge-bottom-left">
+                <span>🌟</span>
+                <span class="grad-text-emerald" style="font-weight: 800;">CGPA: 7.41 / 10.0</span>
+              </div>
+
+              <div class="avatar-sub-chip">
+                <span>Kumar Utkarsh &bull; Cloud Engineer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION (EXECUTIVE BENTO GRID) ==================== -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Executive Summary</span>
+          <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+          <p class="section-subtitle">Bridging computational engineering, modular software design, and user-first digital product experiences.</p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Bento 1: Professional Narrative (8 Cols) -->
+          <div class="bento-col-8 glass-card bento-card reveal-on-scroll">
+            <div>
+              <div class="bento-card-header">
+                <div class="bento-icon-box">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="bento-title">The Engineer &amp; Designer</h3>
+                  <span class="bento-tagline">Cloud Architecture &bull; UI/UX Systems</span>
+                </div>
+              </div>
+
+              <p class="bento-narrative">
+                I am a Computer Science &amp; Engineering undergraduate at Lovely Professional University maintaining an academic CGPA of 7.41. 
+                My focus lies in building reliable, high-performance software applications and creating intuitive, accessible design systems in Figma.
+              </p>
+              <p class="bento-narrative" style="margin-bottom: 0;">
+                With foundational strengths in Python, C, JavaScript, and database systems (MySQL, MongoDB), alongside embedded hardware prototyping in Arduino, I build cohesive solutions from low-level systems up to user-facing applications.
+              </p>
+            </div>
+
+            <div class="bento-stat-trio">
+              <div class="bento-stat-item">
+                <span class="bento-stat-num grad-text-emerald">7.41</span>
+                <span class="bento-stat-lbl">Academic CGPA</span>
+              </div>
+              <div class="bento-stat-item">
+                <span class="bento-stat-num grad-text-purple">5</span>
+                <span class="bento-stat-lbl">Verified Industry Certifications</span>
+              </div>
+              <div class="bento-stat-item">
+                <span class="bento-stat-num grad-text-blue">100%</span>
+                <span class="bento-stat-lbl">Commitment to Quality</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 2: Core Engineering Focus (4 Cols) -->
+          <div class="bento-col-4 glass-card bento-card reveal-on-scroll">
+            <div class="bento-card-header">
+              <div class="bento-icon-box" style="color: var(--brand-indigo); border-color: rgba(79, 70, 229, 0.25);">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h3 class="bento-title">Core Focus</h3>
+                <span class="bento-tagline" style="color: var(--brand-indigo);">Engineering Domains</span>
+              </div>
+            </div>
+
+            <div class="focus-list">
+              <div class="focus-item">
+                <span class="focus-icon">&#10004;</span>
+                <div>
+                  <strong style="color: #fff;">Cloud Engineering:</strong> Scalable deployment, containerization, and distributed systems.
+                </div>
+              </div>
+              <div class="focus-item">
+                <span class="focus-icon">&#10004;</span>
+                <div>
+                  <strong style="color: #fff;">UI/UX Design Systems:</strong> Ergonomic prototyping, wireframes, and design systems in Figma.
+                </div>
+              </div>
+              <div class="focus-item">
+                <span class="focus-icon">&#10004;</span>
+                <div>
+                  <strong style="color: #fff;">Embedded Systems:</strong> Microcontroller firmware and analog sensor data acquisition.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 3: Academic Program (6 Cols) -->
+          <div class="bento-col-6 glass-card bento-card reveal-on-scroll">
+            <div class="bento-card-header">
+              <div class="bento-icon-box" style="color: #10b981; border-color: rgba(16, 185, 129, 0.3);">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="bento-title">Computer Science &amp; Engineering</h3>
+                <span class="bento-tagline" style="color: #10b981;">Lovely Professional University</span>
+              </div>
+            </div>
+
+            <div class="academic-progress-box">
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+                <span style="color: var(--text-muted);">Degree Track (2025 &ndash; Present)</span>
+                <span class="grade-badge grade-badge-emerald">CGPA: 7.41 / 10.0</span>
+              </div>
+              <div class="academic-track">
+                <div class="academic-fill"></div>
+              </div>
+              <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 0.6rem;">
+                Curriculum includes Data Structures &amp; Algorithms, Object-Oriented Programming, Database Management Systems, and Computer Networks.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bento 4: Professional Methodologies (6 Cols) -->
+          <div class="bento-col-6 glass-card bento-card reveal-on-scroll">
+            <div class="bento-card-header">
+              <div class="bento-icon-box" style="color: #f59e0b; border-color: rgba(245, 158, 11, 0.3);">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <div>
+                <h3 class="bento-title">Professional Competencies</h3>
+                <span class="bento-tagline" style="color: #f59e0b;">Engineering Collaboration</span>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+              <div class="focus-item">
+                <span>&#128161; Analytical Problem Solving</span>
+              </div>
+              <div class="focus-item">
+                <span>&#129309; Cross-Functional Teamwork</span>
+              </div>
+              <div class="focus-item">
+                <span>&#9200; Project Time Management</span>
+              </div>
+              <div class="focus-item">
+                <span>&#9889; Technical Adaptability</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS MATRIX SECTION ==================== -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Technical Competencies</span>
+          <h2 class="section-title">Skills &amp; <span class="gradient-text">Technologies</span></h2>
+          <p class="section-subtitle">Core proficiencies across programming languages, design suites, databases, and engineering tools.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="skills-filter-nav reveal-on-scroll">
+          <button class="skill-filter-btn active" data-filter="all">All Skills</button>
+          <button class="skill-filter-btn" data-filter="lang">Languages</button>
+          <button class="skill-filter-btn" data-filter="web">Frontend &amp; UI/UX</button>
+          <button class="skill-filter-btn" data-filter="db">Databases &amp; Backend</button>
+          <button class="skill-filter-btn" data-filter="tools">Hardware &amp; Tools</button>
+        </div>
+
+        <!-- Skills Cards Matrix -->
+        <div class="skills-cards-grid">
+          <!-- Python -->
+          <div class="skill-interactive-card glass-card reveal-on-scroll" data-category="lang">
+            <div class="skill-avatar-box">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                <path d="M11.91 2C6.18 2 6.52 4.49 6.52 4.49l.01 2.58h5.48v.82H4.41S2 7.6 2 13.37c0 5.76 2.1 5.56 2.1 5.56h1.25V17.1s-.07-2.16 2.13-2.16h5.42v-.83H7.5s-2.07.03-2.07-2.05c0-2.09 1.83-2.06 1.83-2.06h7.93s1.97.08 1.97-1.92V4.49S17.64 2 11.91 2zm-2.08 1.55a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6zm2.26 18.45c5.73 0 5.39-2.49 5.39-2.49l-.01-2.58h-5.48v-.82h7.6S22 16.4 22 10.63c0-5.76-2.1-5.56-2.1-5.56h-1.25v1.83s.07 2.16-2.13 2.16h-5.42v.83h5.4s2.07-.03 2.07 2.05c0 2.09-1.83 2.06-1.83 2.06H8.84s-1.97-.08-1.97 1.92v3.59s-.48 2.49 5.25 2.49zm2.08-1.55a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6z" />
+              </svg>
+            </div>
+            <div class="skill-info-meta">
+              <h4 class="skill-card-name">Python</h4>
+              <span class="skill-card-category">Core Language &bull; OOP</span>
+            </div>
+          </div>
+
+          <!-- C -->
+          <div class="skill-interactive-card glass-card reveal-on-scroll" data-category="lang">
+            <div class="skill-avatar-box">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M15 9.5a4 4 0 1 0 0 5"></path>
+              </svg>
+            </div>
+            <div class="skill-info-meta">
+              <h4 class="skill-card-name">C Language</h4>
+              <span class="skill-card-category">Systems &amp; Embedded</span>
+            </div>
+          </div>
+
+          <!-- JavaScript -->
+          <div class="skill-interactive-card glass-card reveal-on-scroll" data-category="lang web">
+            <div class="skill-avatar-box">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                <path d="M3 3h18v18H3V3zm13.7 13.9c.7 0 1.4-.4 1.8-1l1.6 1c-.8 1.3-2 1.9-3.4 1.9-2.6 0-4.1-1.6-4.1-4.2 0-2.8 1.7-4.4 4.3-4.4 2.4 0 3.8 1.4 3.8 3.5v.7h-6c.1 1.6 1 2.5 2 2.5zm-.2-4.1c0-1-.6-1.6-1.7-1.6s-1.7.6-1.8 1.6h3.5zM9.5 18.7c-1.3 0-2.3-.5-2.8-1.4l1.5-1c.4.6.8.9 1.3.9.7 0 1.2-.4 1.2-1.4V10.3H13v5.6c0 1.9-1.2 2.8-3.5 2.8z" />
+              </svg>
+            </div>
+            <div class="skill-info-meta">
+              <h4 class="skill-card-name">JavaScript (ES6+)</h4>
+              <span class="skill-card-category">Frontend &amp; Interactivity</span>
+            </div>
+          </div>
+
+          <!-- SQL -->
+          <div class="skill-interactive-card glass-card reveal-on-scroll" data-category="lang db">
+            <div class="skill-avatar-box">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <div class="skill-info-meta">
+              <h4 class="skill-card-name">SQL</h4>
+              <span class="skill-card-category">Relational Databases</span>
+            </div>
+          </div>
+
+          <!-- Figma -->
+          <div class="skill-interactive-card glass-card reveal-on-scroll" data-category="web tools">
+            <div class="skill-avatar-box" style="color: #f472b6; border-color: rgba(244, 114, 182, 0.3);">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                <path d="M8.5 2a3.5 3.5 0 0 0 0 7H12V2H8.5zm7 0H12v7h3.5a3.5 3.5 0 0 0 0-7zM12 9H8.5a3.5 3.5 0 0 0 0 7H12V9zm0 7H8.5A3.5 3.5 0 1 0 12 19.5V16zm0-7h3.5a3.5 3.5 0 1 1 0 7H12V9z" />
+              </svg>
+            </div>
+            <div class="skill-info-meta">
+              <h4 class="skill-card-name">Figma (UI/UX)</h4>
+              <span class="skill-card-category">Design Systems &amp; Prototyping</span>
+            </div>
+          </div>
+
+          <!-- HTML5 & CSS3 -->
+          <div class="skill-interactive-card glass-card reveal-on-scroll" data-category="web">
+            <div class="skill-avatar-box">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                <path d="M3 2l1.68 18.84L12 23l7.32-2.16L21 2H3zm14.65 5.5h-8.8l.2 2.25h8.4l-.58 6.45-4.67 1.3-4.66-1.3-.32-3.6h2.2l.16 1.8 2.62.7 2.62-.7.27-3.1H5.4l-.6-6.75h13.1l-.25 2.25z" />
+              </svg>
+            </div>
+            <div class="skill-info-meta">
+              <h4 class="skill-card-name">HTML5 &amp; CSS3</h4>
+              <span class="skill-card-category">Responsive Web Design</span>
+            </div>
+          </div>
+
+          <!-- MongoDB -->
+          <div class="skill-interactive-card glass-card reveal-on-scroll" data-category="db">
+            <div class="skill-avatar-box" style="color: #10b981; border-color: rgba(16, 185, 129, 0.3);">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                <path d="M12 2.5C12 2.5 6 7.5 6 13.5c0 3.5 2.5 6.5 6 8 3.5-1.5 6-4.5 6-8 0-6-6-11-6-11zm0 17.5c-2.8-1.2-4.5-3.8-4.5-6.5 0-3.8 3.5-7.5 4.5-8.8 1 1.3 4.5 5 4.5 8.8 0 2.7-1.7 5.3-4.5 6.5z" />
+              </svg>
+            </div>
+            <div class="skill-info-meta">
+              <h4 class="skill-card-name">MongoDB</h4>
+              <span class="skill-card-category">NoSQL Document Store</span>
+            </div>
+          </div>
+
+          <!-- MySQL & DBMS -->
+          <div class="skill-interactive-card glass-card reveal-on-scroll" data-category="db">
+            <div class="skill-avatar-box">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <line x1="7" y1="15" x2="17" y2="15"></line>
+              </svg>
+            </div>
+            <div class="skill-info-meta">
+              <h4 class="skill-card-name">MySQL / DBMS</h4>
+              <span class="skill-card-category">Schema &amp; Persistence</span>
+            </div>
+          </div>
+
+          <!-- Arduino & Sensors -->
+          <div class="skill-interactive-card glass-card reveal-on-scroll" data-category="tools">
+            <div class="skill-avatar-box" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.3);">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                <circle cx="9" cy="9" r="2"></circle>
+                <circle cx="15" cy="15" r="2"></circle>
+                <path d="M9 15h6"></path>
+                <path d="M15 9h-6"></path>
+              </svg>
+            </div>
+            <div class="skill-info-meta">
+              <h4 class="skill-card-name">Arduino / IoT</h4>
+              <span class="skill-card-category">Microcontrollers &amp; Sensors</span>
+            </div>
+          </div>
+
+          <!-- Git & GitHub -->
+          <div class="skill-interactive-card glass-card reveal-on-scroll" data-category="tools">
+            <div class="skill-avatar-box">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                <path d="M21.62 10.88L13.12 2.38a2.64 2.64 0 0 0-3.74 0L7.4 4.36l3.52 3.52a2.38 2.38 0 0 1 3 3l3.43 3.43a2.38 2.38 0 1 1-1.42 1.42L12.5 12.3v5.27a2.38 2.38 0 1 1-2 0V11.8a2.38 2.38 0 0 1-1.28-3.13L5.7 5.15 2.38 8.47a2.64 2.64 0 0 0 0 3.74l8.5 8.5a2.64 2.64 0 0 0 3.74 0l7-7a2.64 2.64 0 0 0 0-3.83z" />
+              </svg>
+            </div>
+            <div class="skill-info-meta">
+              <h4 class="skill-card-name">Git &amp; GitHub</h4>
+              <span class="skill-card-category">Version Control &amp; Workflow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURED PROJECTS SECTION ==================== -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Case Studies</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          <p class="section-subtitle">Real-world applications combining intuitive user experience design with robust embedded logic.</p>
+        </div>
+
+        <div class="projects-deck">
+          <!-- Project 1: AstraTune Music App UI/UX Design -->
+          <article class="project-grand-card glass-card reveal-on-scroll">
+            <div class="project-grand-grid">
+              <!-- AstraTune Faithful UI Mockup -->
+              <div class="project-stage-frame">
+                <div class="stage-top-bar">
+                  <div class="console-window-dots">
+                    <span class="console-dot red"></span>
+                    <span class="console-dot yellow"></span>
+                    <span class="console-dot green"></span>
+                  </div>
+                  <span class="stage-address">figma.com/@utkarsh/AstraTune-UI-System</span>
+                  <span class="stage-badge" style="color: #c084fc;">&#x25CF; Figma Prototype</span>
+                </div>
+                <div class="stage-body" style="background: #0b0517;">
+                  <div class="astratune-mockup-wrap">
+                    <!-- AstraTune App Header -->
+                    <div class="astratune-top-bar">
+                      <div class="astratune-brand-title">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                          <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                        </svg>
+                        <span>AstraTune</span>
+                      </div>
+                      <div class="astratune-quick-icons">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                          <circle cx="11" cy="11" r="8"></circle>
+                          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                          <line x1="12" y1="5" x2="12" y2="19"></line>
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                          <circle cx="12" cy="12" r="3"></circle>
+                          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <!-- AstraTune Feed Filter Tabs -->
+                    <div class="astratune-feed-tabs">
+                      <span class="astratune-tab-pill active">Liked</span>
+                      <span class="astratune-tab-pill">Popular</span>
+                      <span class="astratune-tab-pill">New</span>
+                    </div>
+
+                    <!-- Now Playing Card (13 Reasons Why / Lord Huron) -->
+                    <div class="astratune-now-playing-card">
+                      <div class="astratune-cover-art">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                          <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                        </svg>
+                        <span style="font-size: 0.58rem; font-family: var(--font-mono); margin-top: 2px; color: #e9d5ff;">13 REASONS</span>
+                      </div>
+                      <div class="astratune-song-meta">
+                        <div class="astratune-song-title">The Night We Met</div>
+                        <div class="astratune-song-artist">Lord Huron, Phoebe Bridgers</div>
+                        <div style="font-size: 0.72rem; color: #a855f7; margin-top: 0.2rem;">Featured on AstraTune</div>
+                      </div>
+                    </div>
+
+                    <!-- Scrubber Bar -->
+                    <div class="astratune-scrubber-bar">
+                      <div class="astratune-scrubber-fill"></div>
+                    </div>
+                    <div class="astratune-time-row">
+                      <span>02:45</span>
+                      <span>03:28</span>
+                    </div>
+
+                    <!-- Playback Controls -->
+                    <div class="astratune-controls-row">
+                      <div class="astratune-waveform-bars">
+                        <span class="wave-bar"></span>
+                        <span class="wave-bar"></span>
+                        <span class="wave-bar"></span>
+                        <span class="wave-bar"></span>
+                        <span class="wave-bar"></span>
+                      </div>
+
+                      <div style="display: flex; align-items: center; gap: 0.9rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color: #c084fc; cursor: pointer;">
+                          <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                          <line x1="5" y1="19" x2="5" y2="5" stroke="currentColor" stroke-width="2"></line>
+                        </svg>
+                        <div class="astratune-play-btn" id="demo-play-btn" title="Toggle Play Simulation">
+                          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                          </svg>
+                        </div>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color: #c084fc; cursor: pointer;">
+                          <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                          <line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2"></line>
+                        </svg>
+                      </div>
+
+                      <span style="font-size: 0.7rem; color: #34d399; font-family: var(--font-mono);">&#x25CF; Lossless</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Info -->
+              <div class="project-details-wrap">
+                <span class="project-tag-pill astratune">UI/UX &bull; Figma Design System &bull; AstraTune</span>
+                <h3 class="project-h3">AstraTune &ndash; Music Streaming UI/UX</h3>
+                <p class="project-lead">
+                  Designed a cohesive, dark-themed mobile music streaming application in Figma comprising 4 core user flows: Splash Screen, Discovery Feed, Immersive Player, and Search Matrix.
+                </p>
+                <p class="project-sub">
+                  Engineered custom UI components including the vibrant "Now Playing" playback stage featuring <em>The Night We Met (Lord Huron, Phoebe Bridgers)</em>, category carousels (Sapphire, Attention, Blinding Lights), curated filter tabs (Liked, Popular, New), and ergonomic bottom navigation.
+                </p>
+
+                <div class="stack-tags">
+                  <span class="stack-chip">Figma</span>
+                  <span class="stack-chip">Mobile UI/UX</span>
+                  <span class="stack-chip">Design Systems</span>
+                  <span class="stack-chip">AstraTune</span>
+                  <span class="stack-chip">Interactive Prototyping</span>
+                  <span class="stack-chip">Component States</span>
+                </div>
+
+                <div style="display: flex; gap: 0.9rem; flex-wrap: wrap;">
+                  <a href="https://github.com/iamutkarshnhn" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2Z" />
+                    </svg>
+                    <span>View on GitHub</span>
+                  </a>
+                  <a href="assets/astratune-figma-mockup.jpg" target="_blank" class="btn btn-glass btn-sm">
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14">
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                      <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                    </svg>
+                    <span>View 4-Screen Figma Flow</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Water Quality Monitoring System -->
+          <article class="project-grand-card glass-card reveal-on-scroll">
+            <div class="project-grand-grid reverse">
+              <!-- Project Info -->
+              <div class="project-details-wrap">
+                <span class="project-tag-pill iot">Embedded IoT &bull; C Language &bull; Nov 2025 &ndash; Jan 2026</span>
+                <h3 class="project-h3">Water Quality Monitoring System</h3>
+                <p class="project-lead">
+                  Engineered an automated hardware-software monitoring system delivering real-time telemetry on key aquatic health parameters.
+                </p>
+                <p class="project-sub">
+                  Programmed microcontrollers in C for sensor data acquisition, algorithmic calibration, and analog noise filtration to guarantee reliable, high-precision readings under varying environmental conditions.
+                </p>
+
+                <div class="stack-tags">
+                  <span class="stack-chip">C Language</span>
+                  <span class="stack-chip">Arduino Microcontroller</span>
+                  <span class="stack-chip">Sensors Telemetry</span>
+                  <span class="stack-chip">Analog Calibration</span>
+                  <span class="stack-chip">Data Acquisition</span>
+                </div>
+
+                <div style="display: flex; gap: 0.9rem; flex-wrap: wrap;">
+                  <a href="https://github.com/iamutkarshnhn" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2Z" />
+                    </svg>
+                    <span>View Firmware Repo</span>
+                  </a>
+                  <a href="#contact" class="btn btn-glass btn-sm">
+                    <span>Discuss System</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Live IoT Sensor Mockup -->
+              <div class="project-stage-frame">
+                <div class="stage-top-bar">
+                  <div class="console-window-dots">
+                    <span class="console-dot red"></span>
+                    <span class="console-dot yellow"></span>
+                    <span class="console-dot green"></span>
+                  </div>
+                  <span class="stage-address">node01.iot.internal/sensors</span>
+                  <span class="stage-badge" style="color: #34d399;">&#x25CF; Telemetry Stream</span>
+                </div>
+                <div class="stage-body">
+                  <div class="iot-telemetry-cluster">
+                    <div class="iot-tile">
+                      <span style="font-size: 0.7rem; color: var(--text-dim);">pH LEVEL</span>
+                      <div class="iot-tile-val">7.2</div>
+                      <span style="font-size: 0.65rem; color: #34d399;">Optimal Range</span>
+                    </div>
+                    <div class="iot-tile">
+                      <span style="font-size: 0.7rem; color: var(--text-dim);">TURBIDITY</span>
+                      <div class="iot-tile-val">1.4</div>
+                      <span style="font-size: 0.65rem; color: #34d399;">NTU (Clear)</span>
+                    </div>
+                    <div class="iot-tile">
+                      <span style="font-size: 0.7rem; color: var(--text-dim);">WATER TEMP</span>
+                      <div class="iot-tile-val">24.5&deg;C</div>
+                      <span style="font-size: 0.65rem; color: #34d399;">Calibrated</span>
+                    </div>
+                  </div>
+
+                  <div class="iot-live-graph">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.74rem; font-family: var(--font-mono);">
+                      <span style="color: var(--text-dim);">Real-time Telemetry Acquisition</span>
+                      <span style="color: #10b981;">100 Hz Frequency</span>
+                    </div>
+                    <div class="graph-bars-stream">
+                      <span class="stream-col" style="height: 45%;"></span>
+                      <span class="stream-col" style="height: 65%;"></span>
+                      <span class="stream-col" style="height: 55%;"></span>
+                      <span class="stream-col" style="height: 80%;"></span>
+                      <span class="stream-col" style="height: 90%;"></span>
+                      <span class="stream-col" style="height: 70%;"></span>
+                      <span class="stream-col" style="height: 85%;"></span>
+                      <span class="stream-col" style="height: 95%;"></span>
+                      <span class="stream-col" style="height: 75%;"></span>
+                      <span class="stream-col" style="height: 85%;"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TRAINING & WORKSHOPS SECTION ==================== -->
+    <section id="training" class="section training-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Hands-on Engineering</span>
+          <h2 class="section-title">Training &amp; <span class="gradient-text">Workshops</span></h2>
+          <p class="section-subtitle">Practical engineering bootcamps focused on real-world software architecture and team workflows.</p>
+        </div>
+
+        <div class="glass-card reveal-on-scroll" style="max-width: 860px; margin: 0 auto; padding: 2.2rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.3rem; flex-wrap: wrap; gap: 0.8rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div class="bento-icon-box" style="color: var(--brand-blue-light);">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: #fff;">
+                  Programming &amp; Technology Workshops
+                </h3>
+                <span style="font-size: 0.86rem; color: var(--brand-blue-light);">Technical Workshops | Certificate</span>
+              </div>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--brand-blue-light); background: rgba(56, 189, 248, 0.08); padding: 0.3rem 0.8rem; border-radius: var(--radius-full); border: 1px solid rgba(56, 189, 248, 0.25);">
+              March 2026 &ndash; June 2026
+            </span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.85rem; margin-top: 1rem; font-size: 0.96rem; color: var(--text-secondary);">
+            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+              <span style="color: var(--brand-blue-light); font-weight: 700;">&#10003;</span>
+              <span>Engaged in comprehensive technical workshops covering modern software development lifecycles and database management.</span>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+              <span style="color: var(--brand-blue-light); font-weight: 700;">&#10003;</span>
+              <span>Gained hands-on experience in collaborative version control with Git, code reviews, and structured debugging methodologies.</span>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+              <span style="color: var(--brand-blue-light); font-weight: 700;">&#10003;</span>
+              <span>Applied object-oriented principles to engineer robust, well-documented software prototypes and web components.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EDUCATION SECTION ==================== -->
+    <section id="education" class="section education-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Academic Background</span>
+          <h2 class="section-title">Academic <span class="gradient-text">Trajectory</span></h2>
+          <p class="section-subtitle">Chronological academic journey from foundational schooling to Computer Science &amp; Engineering.</p>
+        </div>
+
+        <div class="cyber-timeline">
+          <!-- Step 1: LPU -->
+          <div class="timeline-step reveal-on-scroll">
+            <div class="timeline-node"></div>
+            <div class="timeline-panel glass-card">
+              <div class="timeline-panel-top">
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--brand-blue-light); background: rgba(56, 189, 248, 0.08); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); border: 1px solid rgba(56, 189, 248, 0.25);">
+                  August 2025 &ndash; Present
+                </span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: #34d399; background: rgba(16, 185, 129, 0.12); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); border: 1px solid rgba(16, 185, 129, 0.25);">
+                  CURRENT DEGREE
+                </span>
+              </div>
+              <h3 class="timeline-inst-name">Lovely Professional University</h3>
+              <h4 class="timeline-degree-name">Bachelor of Technology &ndash; Computer Science and Engineering</h4>
+              <div class="timeline-scores">
+                <div style="font-family: var(--font-mono); font-size: 0.92rem; display: flex; align-items: center;">
+                  <span style="color: var(--text-muted);">Current CGPA:</span>
+                  <span class="grade-badge grade-badge-emerald">7.41 / 10.0</span>
+                </div>
+                <div style="font-size: 0.86rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem;">
+                  <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" style="color: var(--brand-blue-light);" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Phagwara, Punjab</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Class XII -->
+          <div class="timeline-step reveal-on-scroll">
+            <div class="timeline-node" style="border-color: var(--brand-indigo); box-shadow: 0 0 12px var(--brand-indigo);"></div>
+            <div class="timeline-panel glass-card">
+              <div class="timeline-panel-top">
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--brand-indigo); background: rgba(79, 70, 229, 0.08); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); border: 1px solid rgba(79, 70, 229, 0.25);">
+                  May 2023 &ndash; March 2025
+                </span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted); background: rgba(255, 255, 255, 0.05); padding: 0.2rem 0.6rem; border-radius: var(--radius-full);">
+                  COMPLETED
+                </span>
+              </div>
+              <h3 class="timeline-inst-name">JVM (Jawahar Vidya Mandir) Shyamali</h3>
+              <h4 class="timeline-degree-name">Higher Secondary Education (Class XII)</h4>
+              <div class="timeline-scores">
+                <div style="font-family: var(--font-mono); font-size: 0.92rem; display: flex; align-items: center;">
+                  <span style="color: var(--text-muted);">Percentage:</span>
+                  <span class="grade-badge grade-badge-blue">73.4%</span>
+                </div>
+                <div style="font-size: 0.86rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem;">
+                  <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" style="color: var(--brand-blue-light);" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Ranchi, Jharkhand</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Class X -->
+          <div class="timeline-step reveal-on-scroll">
+            <div class="timeline-node" style="border-color: var(--brand-indigo); box-shadow: 0 0 12px var(--brand-indigo);"></div>
+            <div class="timeline-panel glass-card">
+              <div class="timeline-panel-top">
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--brand-indigo); background: rgba(79, 70, 229, 0.08); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); border: 1px solid rgba(79, 70, 229, 0.25);">
+                  June 2022 &ndash; March 2023
+                </span>
+                <span style="font-size: 0.72rem; font-weight: 700; color: var(--text-muted); background: rgba(255, 255, 255, 0.05); padding: 0.2rem 0.6rem; border-radius: var(--radius-full);">
+                  COMPLETED
+                </span>
+              </div>
+              <h3 class="timeline-inst-name">JVM (Jawahar Vidya Mandir) Shyamali</h3>
+              <h4 class="timeline-degree-name">Secondary Education (Class X)</h4>
+              <div class="timeline-scores">
+                <div style="font-family: var(--font-mono); font-size: 0.92rem; display: flex; align-items: center;">
+                  <span style="color: var(--text-muted);">Percentage:</span>
+                  <span class="grade-badge grade-badge-purple">89.7%</span>
+                </div>
+                <div style="font-size: 0.86rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem;">
+                  <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" style="color: var(--brand-blue-light);" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Ranchi, Jharkhand</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CERTIFICATIONS GALLERY (ORIGINAL AUTHENTIC IMAGES) ==================== -->
+    <section id="certifications" class="section certifications-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Verified Credentials</span>
+          <h2 class="section-title">Certifications &amp; <span class="gradient-text">Badges</span></h2>
+          <p class="section-subtitle">Official original industry certificates completed across Data Analytics, GenAI, Python Development, and Cyber Security.</p>
+        </div>
+
+        <div class="cert-gallery-grid">
+          <!-- Cert 1: Deloitte -->
+          <div class="cert-showcase-card glass-card reveal-on-scroll">
+            <div class="cert-thumbnail-box view-cert-trigger" data-cert-id="deloitte-analytics" title="Click to view full Deloitte Certificate">
+              <img src="assets/certificates/deloitte-data-analytics.png" alt="Deloitte Data Analytics Certificate - Kumar Utkarsh" class="cert-thumb-img" />
+              <div class="cert-thumb-overlay">
+                <span class="cert-hover-btn">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14">
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>View Original</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="cert-card-top">
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-dim);">July 12, 2026</span>
+              <span class="verified-pill">&#10004; Verified</span>
+            </div>
+            <h3 class="cert-card-title">Data Analytics Job Simulation</h3>
+            <div class="cert-card-issuer">Deloitte &bull; Forage</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.1rem;">
+              Data analytics &amp; forensic technology patterns. Verification: <code style="color: var(--brand-blue-light); font-size: 0.75rem;">tXpZryiWPA7vsLEX4</code>
+            </p>
+            <div class="cert-card-bottom">
+              <button class="view-cert-trigger" data-cert-id="deloitte-analytics">
+                <span>View Full Certificate</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 2: TATA -->
+          <div class="cert-showcase-card glass-card reveal-on-scroll">
+            <div class="cert-thumbnail-box view-cert-trigger" data-cert-id="tata-genai" title="Click to view full TATA Certificate">
+              <img src="assets/certificates/tata-genai-analytics.png" alt="TATA GenAI Powered Data Analytics Certificate - Kumar Utkarsh" class="cert-thumb-img" />
+              <div class="cert-thumb-overlay">
+                <span class="cert-hover-btn">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14">
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>View Original</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="cert-card-top">
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-dim);">July 13, 2026</span>
+              <span class="verified-pill">&#10004; Verified</span>
+            </div>
+            <h3 class="cert-card-title">GenAI Powered Data Analytics</h3>
+            <div class="cert-card-issuer">TATA &bull; Forage</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.1rem;">
+              Exploratory data analysis, risk profiling, AI delinquency forecasting, and collections strategy.
+            </p>
+            <div class="cert-card-bottom">
+              <button class="view-cert-trigger" data-cert-id="tata-genai">
+                <span>View Full Certificate</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 3: Infosys Python 1 -->
+          <div class="cert-showcase-card glass-card reveal-on-scroll">
+            <div class="cert-thumbnail-box view-cert-trigger" data-cert-id="infosys-python-1" title="Click to view full Infosys Python 1 Certificate">
+              <img src="assets/certificates/infosys-python-1.png" alt="Infosys Springboard Python Part 1 Certificate - Kumar Utkarsh" class="cert-thumb-img" />
+              <div class="cert-thumb-overlay">
+                <span class="cert-hover-btn">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14">
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>View Original</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="cert-card-top">
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-dim);">July 17, 2026</span>
+              <span class="verified-pill">&#10004; Wingspan</span>
+            </div>
+            <h3 class="cert-card-title">Programming Fundamentals using Python - Part 1</h3>
+            <div class="cert-card-issuer">Infosys Springboard</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.1rem;">
+              Python syntax, algorithms, control flow logic, functions, and structured problem solving.
+            </p>
+            <div class="cert-card-bottom">
+              <button class="view-cert-trigger" data-cert-id="infosys-python-1">
+                <span>View Full Certificate</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 4: Infosys Python 2 -->
+          <div class="cert-showcase-card glass-card reveal-on-scroll">
+            <div class="cert-thumbnail-box view-cert-trigger" data-cert-id="infosys-python-2" title="Click to view full Infosys Python 2 Certificate">
+              <img src="assets/certificates/infosys-python-2.png" alt="Infosys Springboard Python Part 2 Certificate - Kumar Utkarsh" class="cert-thumb-img" />
+              <div class="cert-thumb-overlay">
+                <span class="cert-hover-btn">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14">
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>View Original</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="cert-card-top">
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-dim);">July 18, 2026</span>
+              <span class="verified-pill">&#10004; Wingspan</span>
+            </div>
+            <h3 class="cert-card-title">Programming Fundamentals using Python - Part 2</h3>
+            <div class="cert-card-issuer">Infosys Springboard</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.1rem;">
+              Object-oriented design patterns, recursion, file operations, and exception architectures in Python.
+            </p>
+            <div class="cert-card-bottom">
+              <button class="view-cert-trigger" data-cert-id="infosys-python-2">
+                <span>View Full Certificate</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 5: Infosys Cyber Security -->
+          <div class="cert-showcase-card glass-card reveal-on-scroll">
+            <div class="cert-thumbnail-box view-cert-trigger" data-cert-id="infosys-cybersecurity" title="Click to view full Infosys Cyber Security Certificate">
+              <img src="assets/certificates/infosys-cyber-security.png" alt="Infosys Springboard Cyber Security Certificate - Kumar Utkarsh" class="cert-thumb-img" />
+              <div class="cert-thumb-overlay">
+                <span class="cert-hover-btn">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14">
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>View Original</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="cert-card-top">
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-dim);">March 24, 2026</span>
+              <span class="verified-pill">&#10004; Wingspan</span>
+            </div>
+            <h3 class="cert-card-title">Introduction to Cyber Security</h3>
+            <div class="cert-card-issuer">Infosys Springboard</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.1rem;">
+              Threat models, network security defense, cryptographic mechanisms, and vulnerability mitigation.
+            </p>
+            <div class="cert-card-bottom">
+              <button class="view-cert-trigger" data-cert-id="infosys-cybersecurity">
+                <span>View Full Certificate</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-tag">Direct Inquiries</span>
+          <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+          <p class="section-subtitle">Open for Cloud Engineering roles, UI/UX collaborations, and technical discussions.</p>
+        </div>
+
+        <div class="contact-layout-grid">
+          <!-- Left: Direct Channels & Quick Copy -->
+          <div class="contact-direct-col reveal-on-scroll">
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">
+              Contact Information
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.96rem; line-height: 1.65; margin-bottom: 1.6rem;">
+              Feel free to reach out directly via email, phone, or LinkedIn. I am always open to discussing new engineering projects and opportunities.
+            </p>
+
+            <!-- Email Card -->
+            <div class="reach-out-card glass-card">
+              <div class="reach-left">
+                <div class="reach-icon-box">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <div style="font-size: 0.74rem; font-family: var(--font-mono); color: var(--text-dim); text-transform: uppercase;">EMAIL</div>
+                  <div style="font-size: 0.95rem; font-weight: 600; color: #fff;">iamutkarshnhn@gmail.com</div>
+                </div>
+              </div>
+              <button class="copy-mini-btn" data-copy="iamutkarshnhn@gmail.com">Copy</button>
+            </div>
+
+            <!-- Phone Card -->
+            <div class="reach-out-card glass-card">
+              <div class="reach-left">
+                <div class="reach-icon-box">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </div>
+                <div>
+                  <div style="font-size: 0.74rem; font-family: var(--font-mono); color: var(--text-dim); text-transform: uppercase;">PHONE</div>
+                  <div style="font-size: 0.95rem; font-weight: 600; color: #fff;">+91 9507504301</div>
+                </div>
+              </div>
+              <button class="copy-mini-btn" data-copy="+919507504301">Copy</button>
+            </div>
+
+            <!-- Location Card -->
+            <div class="reach-out-card glass-card">
+              <div class="reach-left">
+                <div class="reach-icon-box">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <div style="font-size: 0.74rem; font-family: var(--font-mono); color: var(--text-dim); text-transform: uppercase;">LOCATION</div>
+                  <div style="font-size: 0.95rem; font-weight: 600; color: #fff;">Ranchi / Phagwara, India</div>
+                </div>
+              </div>
+              <span style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--brand-blue-light); background: rgba(56, 189, 248, 0.08); padding: 0.25rem 0.6rem; border-radius: var(--radius-full);">
+                Open to Relocation &amp; Remote
+              </span>
+            </div>
+          </div>
+
+          <!-- Right: Direct Message Form -->
+          <div class="contact-form-panel glass-card reveal-on-scroll">
+            <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 1.3rem;">
+              Send a Direct Message
+            </h3>
+
+            <form id="contact-form" novalidate>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group-float">
+                  <label for="form-name" style="font-size: 0.82rem; font-weight: 600; color: var(--text-secondary);">Your Name *</label>
+                  <input type="text" id="form-name" name="name" class="form-field-input" placeholder="e.g. Alex Smith" required>
+                </div>
+
+                <div class="form-group-float">
+                  <label for="form-email" style="font-size: 0.82rem; font-weight: 600; color: var(--text-secondary);">Your Email *</label>
+                  <input type="email" id="form-email" name="email" class="form-field-input" placeholder="e.g. alex@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-group-float">
+                <label for="form-subject" style="font-size: 0.82rem; font-weight: 600; color: var(--text-secondary);">Subject *</label>
+                <input type="text" id="form-subject" name="subject" class="form-field-input" placeholder="e.g. Cloud Engineering Opportunity" required>
+              </div>
+
+              <div class="form-group-float">
+                <label for="form-message" style="font-size: 0.82rem; font-weight: 600; color: var(--text-secondary);">Message *</label>
+                <textarea id="form-message" name="message" rows="4" class="form-field-input" style="resize: vertical;" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <button type="submit" id="form-submit-btn" class="btn btn-primary btn-block">
+                <span>Send Message</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" width="17" height="17" aria-hidden="true">
+                  <path
+                    d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                </svg>
+              </button>
+            </form>
+
+            <div id="form-feedback" class="console-output-box" style="display: none; margin-top: 1.1rem; text-align: center;">
+              &#10004; Message prepared successfully! Launching email client...
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== CERTIFICATE LIGHTBOX MODAL ==================== -->
+  <div id="cert-lightbox" class="cert-lightbox-overlay" role="dialog" aria-modal="true" aria-labelledby="lightbox-cert-title">
+    <div class="cert-lightbox-shell">
+      <div class="lightbox-header">
+        <div class="lightbox-title">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="color: var(--brand-blue-light);" aria-hidden="true">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+          <span id="lightbox-cert-title">Official Verified Certificate</span>
+        </div>
+        <button id="lightbox-close-btn" class="lightbox-close" aria-label="Close certificate viewer">&times;</button>
+      </div>
+
+      <div class="lightbox-body">
+        <div class="cert-render-box">
+          <img id="lightbox-cert-img" src="assets/certificates/deloitte-data-analytics.png" alt="Certificate Document" />
+        </div>
+      </div>
+
+      <div class="lightbox-footer">
+        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+          <a id="lightbox-full-link" href="#" target="_blank" class="btn btn-glass btn-sm" title="Open High-Res Document">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15" aria-hidden="true">
+              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+              <path fill-rule="evenodd"
+                d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                clip-rule="evenodd" />
+            </svg>
+            <span>Open Original Image</span>
+          </a>
+          <button id="lightbox-print-btn" class="btn btn-outline btn-sm">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z"
+                clip-rule="evenodd" />
+            </svg>
+            <span>Print / Save PDF</span>
+          </button>
+        </div>
+
+        <div style="display: flex; gap: 0.6rem;">
+          <a id="lightbox-verify-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            <span>Verify on Issuer Platform</span>
+            <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14" aria-hidden="true">
+              <path
+                d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+            </svg>
+          </a>
+          <button id="lightbox-dismiss-btn" class="btn btn-glass btn-sm">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-row">
+        <div>
+          <a href="#home" class="nav-brand">
+            <div class="nav-avatar-box" style="width: 36px; height: 36px;">
+              <img src="assets/profile.jpg" alt="Kumar Utkarsh" class="nav-avatar-img" />
+            </div>
+            <div>
+              <span class="brand-bracket">&lt;</span>
+              <span class="brand-name">Utkarsh</span>
+              <span class="brand-dot">.dev</span>
+              <span class="brand-bracket">/&gt;</span>
+            </div>
+          </a>
+          <p style="color: var(--text-dim); font-size: 0.88rem; margin-top: 0.5rem;">
+            Computer Science &amp; Engineering Undergraduate &bull; Cloud Engineer &amp; UI/UX Designer
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 0.8rem;">
+          <a href="https://www.linkedin.com/in/iamutkarshnhn" target="_blank" rel="noopener noreferrer"
+            class="strip-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.2a1.64 1.64 0 0 0-1.66 1.63c0 .91.74 1.65 1.66 1.65 1 0 1.67-.74 1.67-1.65A1.64 1.64 0 0 0 7.83 6.2Z" />
+            </svg>
+          </a>
+          <a href="https://github.com/iamutkarshnhn" target="_blank" rel="noopener noreferrer" class="strip-btn"
+            aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2Z" />
+            </svg>
+          </a>
+          <a href="mailto:iamutkarshnhn@gmail.com" class="strip-btn" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <p>&copy; 2026 Kumar Utkarsh. Crafted with modern web precision &amp; high standards.</p>
+        <p>Built with Pure HTML5, Modern CSS3 &amp; Vanilla JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="floating-top-btn" class="floating-top-btn" aria-label="Back to Top" title="Back to top">
+    <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20" aria-hidden="true">
+      <path fill-rule="evenodd"
+        d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+        clip-rule="evenodd" />
+    </svg>
+  </button>
+
+  <!-- Custom JavaScript File -->
+  <script src="script.js"></script>
+</body>
+
+</html>

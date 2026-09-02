@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="700" fill="url(#bgGrad)" rx="16" />
+  <rect x="25" y="25" width="950" height="650" fill="none" stroke="rgba(56, 189, 248, 0.3)" stroke-width="2" rx="12" />
+  <rect x="35" y="35" width="930" height="630" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" rx="8" />
+
+  <!-- Deloitte Brand / Forage Header -->
+  <text x="70" y="90" font-family="'Plus Jakarta Sans', sans-serif" font-size="32" font-weight="800" fill="#86bc25">Deloitte.</text>
+  <text x="930" y="90" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="700" fill="#94a3b8" text-anchor="end">FORAGE</text>
+
+  <!-- Certificate Title -->
+  <text x="500" y="180" font-family="'Outfit', sans-serif" font-size="18" font-weight="600" fill="#38bdf8" letter-spacing="4" text-anchor="middle">CERTIFICATE OF COMPLETION</text>
+  <text x="500" y="230" font-family="'Outfit', sans-serif" font-size="32" font-weight="700" fill="#f8fafc" text-anchor="middle">Data Analytics Job Simulation</text>
+
+  <text x="500" y="290" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">This credential is proudly presented to</text>
+  
+  <!-- Recipient Name -->
+  <text x="500" y="360" font-family="'Outfit', sans-serif" font-size="44" font-weight="800" fill="url(#goldGrad)" text-anchor="middle">Kumar Utkarsh</text>
+  <line x1="300" y1="385" x2="700" y2="385" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.5" />
+
+  <!-- Narrative / Tasks -->
+  <text x="500" y="430" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" fill="#cbd5e1" text-anchor="middle">For successfully completing practical tasks in Data Analytics &amp; Forensic Technology</text>
+  <text x="500" y="460" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Demonstrating skills in Data Quality Analysis, Trend Identification &amp; Forensic Review</text>
+
+  <!-- Footer / Verification -->
+  <text x="100" y="590" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748b">DATE ISSUED</text>
+  <text x="100" y="615" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="600" fill="#f8fafc">July 12, 2026</text>
+
+  <circle cx="500" cy="580" r="36" fill="#0f172a" stroke="url(#goldGrad)" stroke-width="2" />
+  <text x="500" y="586" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="middle">VERIFIED</text>
+
+  <text x="900" y="590" font-family="'JetBrains Mono', monospace" font-size="13" fill="#64748b" text-anchor="end">USER VERIFICATION CODE</text>
+  <text x="900" y="615" font-family="'JetBrains Mono', monospace" font-size="15" font-weight="600" fill="#38bdf8" text-anchor="end">tXpZryiWPA7vsLEX4</text>
+</svg>
